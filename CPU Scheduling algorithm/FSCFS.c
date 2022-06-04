@@ -2,7 +2,7 @@
 #include<conio.h>
 
 //global variables
-int n,process[10],wt[10],bt[10],tat[10];
+int n,wt[10],bt[10],tat[10];
 
 //Calculating waiting time for each process
 void waitingtime(){
