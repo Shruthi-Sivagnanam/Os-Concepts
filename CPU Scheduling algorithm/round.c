@@ -1,10 +1,3 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
 
 #include <stdio.h>
 int bt[10],wt[10],tat[10];
@@ -15,6 +8,9 @@ void wt_and_tat(){
     int temp=0;
     int flag=1;
     int c;
+    int bt1[10];
+    for(i=0;i<n;i++)
+        bt1[i]=bt[i];
     for(i=0;i<n;i++){
         wt[i]=0;
         tat[i]=0;
@@ -25,18 +21,10 @@ void wt_and_tat(){
             continue;
         if(bt[i]>=timeslice){
             bt[i]-=timeslice;
-            if(wt[i]==0)
-            wt[i]=temp;
-            else
-            wt[i]=temp-timeslice;
             temp+=timeslice;
             tat[i]=temp;
         }
         else if(bt[i]<timeslice){
-            if(wt[i]==0)
-            wt[i]=temp;
-            else
-            wt[i]=temp-timeslice;
             temp+=bt[i];
             tat[i]=temp;
             bt[i]=0;
@@ -51,6 +39,8 @@ void wt_and_tat(){
     if(c==0)
         flag=0;
     }
+    for(i=0;i<n;i++)
+        wt[i]=tat[i]-bt1[i];
 }
 void awt_and_atat(){
     float awt,atat;
