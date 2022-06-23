@@ -31,9 +31,9 @@ void main(){
 			pagefault++;
 			frame[first]=refstring[i];
 			if(first==framesize-1)
-				framesize=0;
+				first=0;
 			else
-				framesize++;
+				first++;
 		}
 	}
 	printf("The total number of page fault: %d",pagefault);
